@@ -4,7 +4,6 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
-using System.Windows.Forms;
 
 namespace DirectOutput.Cab.Out.Pac
 {

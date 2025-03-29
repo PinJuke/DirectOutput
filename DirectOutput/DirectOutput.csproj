@@ -369,6 +369,7 @@
     <Compile Include="Cab\Toys\ToyBaseUpdatable.cs" />
     <Compile Include="Cab\Toys\Layer\RGBAToy.cs" />
     <Compile Include="DirectOutput.cs" />
+    <Compile Include="DirectOutputPath.cs" />
     <Compile Include="Frontend\AvailableToysInfo.cs">
       <SubType>Form</SubType>
     </Compile>

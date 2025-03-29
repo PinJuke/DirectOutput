@@ -9,7 +9,6 @@ using System.Text.RegularExpressions;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using PerCederberg.Grammatica.Runtime.RE;
 
 namespace DirectOutput.Cab.Out.PSPico
 {
@@ -684,7 +683,7 @@ namespace DirectOutput.Cab.Out.PSPico
 					IntPtr fp2 = OpenFile();
 
 					// if that succeeded, replace the old handle with the new one and retry the read
-					if (fp2 != null)
+					if (fp2 != IntPtr.Zero)
 					{
 						// replace the handle
 						fp = fp2;

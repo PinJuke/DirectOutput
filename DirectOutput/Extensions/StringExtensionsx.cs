@@ -196,44 +196,6 @@ public static class StringExtensions
 
 
 
-    /// <summary>
-    /// Replaces one or more format items in the string with the string representation of a specified object.
-    /// </summary>
-    /// <param name="s">The string</param>
-    /// <param name="arg0">The object to format.</param>
-    /// <returns>A copy the string in which any format items are replaced by the string representation of <paramref name="arg0"/>.</returns>
-    public static string Build(this string s, object arg0)
-    {
-        if (s == null) { return ""; }
-        return string.Format(s, arg0);
-    }
-
-    /// <summary>
-    /// Replaces the format items in the string with the string representation of two specified objects.
-    /// </summary>
-    /// <param name="s">The string</param>
-    /// <param name="arg0">The first object to format. </param>
-    /// <param name="arg1">The second object to format. </param>
-    /// <returns>A copy of the string in which format items are replaced by the string representations of <paramref name="arg0"/> and <paramref name="arg1"/>.</returns>
-    public static string Build(this string s, object arg0, object arg1)
-    {
-        if (s == null) { return ""; }
-        return string.Format(s, arg0, arg1);
-    }
-
-    /// <summary>
-    /// Replaces the format items in the string with the string representation of three specified objects.
-    /// </summary>
-    /// <param name="s">The string</param>
-    /// <param name="arg0">The first object to format. </param>
-    /// <param name="arg1">The second object to format. </param>
-    /// <param name="arg2">The third object to format. </param>
-    /// <returns>A copy of the string in which the format items have been replaced by the string representations of  <paramref name="arg0"/>, <paramref name="arg1"/>, and <paramref name="arg2"/>.</returns>
-    public static string Build(this string s, object arg0, object arg1, object arg2)
-    {
-        if (s == null) { return ""; }
-        return string.Format(s, arg0, arg1, arg2);
-    }
 
     /// <summary>
     /// Replaces the format item in the string with the string representation of a corresponding object in a specified array.
@@ -241,7 +203,7 @@ public static class StringExtensions
     /// <param name="s">The string</param>
     /// <param name="args">An object array that contains zero or more objects to format. </param>
     /// <returns>A copy of the string in which the format items have been replaced by the string representation of the corresponding objects in <paramref name="args"/>.</returns>
-    public static string Build(this string s, object[] args)
+    public static string Build(this string s, params object[] args)
     {
         if (s == null) { return ""; }
         return string.Format(s, args);
@@ -287,14 +249,14 @@ public static class StringExtensions
             tw = new StreamWriter(FileName, Append);
             tw.Write(s);
         }
-        catch (Exception e)
+        catch (Exception)
         {
 
             if (tw != null)
             {
                 tw.Close();
             }
-            throw e;
+            throw;
         }
 
         tw.Close();

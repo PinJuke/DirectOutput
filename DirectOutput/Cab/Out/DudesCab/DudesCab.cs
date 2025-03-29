@@ -432,7 +432,8 @@ namespace DirectOutput.Cab.Out.DudesCab
                     IntPtr fp2 = OpenFile();
 
                     // if that succeeded, replace the old handle with the new one and retry the read
-                    if (fp2 != null) {
+                    if (fp2 != IntPtr.Zero)
+                    {
                         // replace the handle
                         fp = fp2;
 

@@ -143,7 +143,7 @@ namespace DirectOutput.GlobalConfiguration
 			LookupPaths.Add(Directory.GetCurrentDirectory());
 
             // add the root DOF install folder
-            var InstallFolder = DirectOutputHandler.GetInstallFolder();
+            var InstallFolder = DirectOutputPath.GetInstallFolder();
 			if (InstallFolder != null)
 				LookupPaths.Add(InstallFolder);
 
@@ -515,7 +515,7 @@ namespace DirectOutput.GlobalConfiguration
             // files, we need to keep these variables pointing to the asset files.
             // So the names are now more obviously misnomers, but they really always
             // were.
-            var InstallDir = DirectOutputHandler.GetInstallFolder();
+            var InstallDir = DirectOutputPath.GetInstallFolder();
             if (InstallDir.IsNullOrEmpty())
                 InstallDir = Directory.GetCurrentDirectory();
             D.Add("DllDirectory", InstallDir);

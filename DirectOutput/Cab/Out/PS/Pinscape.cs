@@ -375,7 +375,7 @@ namespace DirectOutput.Cab.Out.PS
 					IntPtr fp2 = OpenFile();
 
 					// if that succeeded, replace the old handle with the new one and retry the read
-					if (fp2 != null)
+					if (fp2 != IntPtr.Zero)
 					{
 						// replace the handle
 						fp = fp2;
@@ -556,7 +556,7 @@ namespace DirectOutput.Cab.Out.PS
                         if (ok)
 						{
 							// add the device to our list
-							devices.Add(new Device(fp, diDetail.DevicePath, name, attrs.VendorID, attrs.ProductID, attrs.VersionNumber, inputReportByteLength));
+							devices.Add(new Device(fp, diDetail.DevicePath, name, (ushort)attrs.VendorID, (ushort)attrs.ProductID, attrs.VersionNumber, inputReportByteLength));
 
 							// the device list object owns the handle now
 							fp = System.IntPtr.Zero;
