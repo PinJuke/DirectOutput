@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DirectOutput.Table;
-using Ciloci.Flee;
 using System.Xml.Serialization;
+using Flee.PublicTypes;
 
 namespace DirectOutput.FX.ConditionFX
 {
